@@ -6,7 +6,7 @@ function longestConsecutive(nums: number[]): number {
     var current: number = nums[0]; 
     var size: number = nums.length
     for ( var i = 0; i < size; i++){
-       if (nums[i]> current){
+       if (nums[i] == current + 1){
           current = nums[i];
            consecutive++;
        } 
