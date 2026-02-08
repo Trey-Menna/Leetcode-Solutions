@@ -3,6 +3,7 @@ function longestConsecutive(nums: number[]): number {
     nums.sort((a, b) => a - b);
 //go through array checking for incremental nums
     var consecutive : number = 1;
+    var maxCon : number = 1;
     var current: number = nums[0]; 
     var size: number = nums.length
 //check edge case
