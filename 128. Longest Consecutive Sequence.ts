@@ -9,13 +9,17 @@ function longestConsecutive(nums: number[]): number {
 //check edge case
     if(size == 0){
       return 0}
-//need to use maxCon
+//need to use maxCon in first part of of statment
     for ( var i = 0; i < size; i++){
        if (nums[i] == current + 1){
           current = nums[i];
            consecutive++;
        } 
-       else{}
+       else{
+       current = nums[i];
+       maxCon = consecutive;
+       consecutive = 0;
+      }
     }
-    return consecutive;
+    return maxCon;
 };
