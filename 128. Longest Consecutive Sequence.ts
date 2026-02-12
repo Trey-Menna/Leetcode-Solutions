@@ -14,6 +14,7 @@ function longestConsecutive(nums: number[]): number {
        if (nums[i] == current + 1){
           current = nums[i];
            consecutive++;
+           if(i == size && consecutive > maxCon){return consecutive;}
        } 
        else{
        current = nums[i];
