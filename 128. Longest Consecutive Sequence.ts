@@ -1,5 +1,5 @@
 function longestConsecutive(nums: number[]): number {
-//sort array
+//sort array uaing built in sort
     nums.sort((a, b) => a - b);
 //declare variables to keep track of current consecutive 
 //number, max consecutive number, current number being checked from
