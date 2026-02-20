@@ -5,4 +5,5 @@ You may assume that each input would have exactly one solution, and you may not 
 You can return the answer in any order.*/
 function twoSum(nums: number[], target: number): number[] {
     //initilize variables 
+    //loop through array
 };
