@@ -4,6 +4,16 @@ You may assume that each input would have exactly one solution, and you may not 
 
 You can return the answer in any order.*/
 function twoSum(nums: number[], target: number): number[] {
-    //initilize variables 
-    //loop through array
+	//initilize variables 
+	let hashmap: Map<string>, number> = new Map();
+	//Loop through array and set values to hashmap
+	for (var index in nums){
+		let complement = target - nums[index];
+		if(hashmap.has(complement)){
+			return [hashmap.get(complement), index];
+		}
+		hashmap.set(nums[index], index);
+	}
+	return [];
+
 };
