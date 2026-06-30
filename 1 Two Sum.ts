@@ -7,12 +7,12 @@ function twoSum(nums: number[], target: number): number[] {
 	//initilize variables 
 	let hashmap: Map<string>, number> = new Map();
 	//Loop through array and set values to hashmap
-	for (var index in nums){
-		let complement = target - nums[index];
+	for (let i = 0; i < nums.length; i++){
+		let complement = target - nums[i];
 		if(hashmap.has(complement)){
-			return [hashmap.get(complement), index];
+			return [hashmap.get(complement), i];
 		}
-		hashmap.set(nums[index], index);
+		hashmap.set(nums[i], i);
 	}
 	return [];
 
