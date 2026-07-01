@@ -5,5 +5,10 @@
 //Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.
 
 function maxProfit(prices: number[]): number {
-    
+	const profit = 0;
+	const hashmap:map <number, string> = map();
+	//Loop through array use hashmap to check the keys if there is profit
+	for(let i = 0; i < number.length; i++){
+		if()	
+	}    
 };
