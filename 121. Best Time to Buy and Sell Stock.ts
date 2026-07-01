@@ -6,9 +6,18 @@
 
 function maxProfit(prices: number[]): number {
 	const profit = 0;
-	const hashmap:map <number, string> = map();
+	const minPrice = Infinity;
 	//Loop through array use hashmap to check the keys if there is profit
-	for(let i = 0; i < number.length; i++){
-		if()	
-	}    
+	for(let i = 0; i < prices.length; i++){
+		//Update with lowest price we have seen so far
+		if(prices[i] < minPrice){
+		minPrice = prices[i];
+		}
+
+		//If selling by today gives better profit
+		else if(prices[i] - minPrice > profit){
+			profit = prices[i] - minPrice;
+		}
+	}
+	return profit;
 };
