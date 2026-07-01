@@ -5,8 +5,8 @@
 //Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.
 
 function maxProfit(prices: number[]): number {
-	const profit = 0;
-	const minPrice = Infinity;
+	let profit = 0;
+	let minPrice = Infinity;
 	//Loop through array use hashmap to check the keys if there is profit
 	for(let i = 0; i < prices.length; i++){
 		//Update with lowest price we have seen so far
