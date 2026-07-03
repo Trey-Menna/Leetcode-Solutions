@@ -3,7 +3,7 @@
 
 function containsDuplicate(nums: number[]): boolean {
 	//Declared Variables
-	let numMap: Map<number, string> = new Map();
+	let numMap: Map<number, number> = new Map();
 	for (let i = 0; i < nums.length; i++) {
 		if (numMap.has(nums[i])) {
 			return true;
