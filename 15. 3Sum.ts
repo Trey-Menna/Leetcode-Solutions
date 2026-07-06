@@ -5,7 +5,45 @@ Notice that the solution set must not contain duplicate triplets.
 */
 
 function threeSum(nums: number[]): number[][] {
-    
+   let result: number[][] = [];
+   //Sort array in ascending numerical using built in sort function
+   nums.sort((a,b) => a - b);
+
+   for(let i = 0; i < nums.length - 2; i++){
+	//Optimization if current anchor is greater than 0, no triplest can sum up to 0
+	if(nums[i] > 0) break;
+
+	//Skip duplicate values for the first element to ensure triplets
+	if(i > 0 && nums[i] == nums[i - 1]) continue;
+
+	let left = i + 1;
+	let right = nums.length - 1;
+
+	//Two-pointer search for the remaining two elements
+	while(left < right){
+		const sum = nums[i] + nums[left] + nums[right];
+
+		if(sum == 0){
+			result.push([nums[i] , nums[left] , nums[right]]);
+
+			//Move pointers inward
+			left ++;
+			right --;
+
+			//Skip duplicate values for the left pointer
+			while (left < right && nums[left] == nums[left - 1]) left++;
+			//Skip duplicate values for the right pointers
+			while (left < right && nums[right] == nums[right + 1]) right++;
+		}
+		else if(sum < 0){
+			left++; //Sum to small, move left pointer to increase value
+		}
+		else{
+			right--; //Sum to large, move right pointer to decrease value
+		}
+	}
+   }
+   return result;
 };
 
 console.log(threeSum([-1,0,1,2,-1,-4]));
