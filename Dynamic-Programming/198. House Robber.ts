@@ -3,10 +3,21 @@
 Given an integer array nums representing the amount of money of each house, return the maximum amount of money you can rob tonight without alerting the police.*/
 
 function rob(nums: number[]): number {
-    
+	let prevMax = 0; //Represents dp[i-2]
+	let currMax = 0; //Represents dp[i-1]
+
+	for (const num of nums) {
+		//Calculate the maximum if we rob the current house
+		const nextMax = Math.max(currMax, prevMax + num);
+
+		//Shift variables forward for the next iteration
+		prevMax = currMax;
+		currMax = nextMax;
+	}
+	return currMax;
 };
 
-console.log(rob([1,2,3,1]));
+console.log(rob([1, 2, 3, 1]));
 /*Output: 4
 Explanation: Rob house 1 (money = 1) and then rob house 3 (money = 3).
 Total amount you can rob = 1 + 3 = 4.*/
