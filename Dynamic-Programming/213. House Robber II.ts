@@ -3,7 +3,29 @@
 Given an integer array nums representing the amount of money of each house, return the maximum amount of money you can rob tonight without alerting the police.*/
 
 function rob(nums: number[]): number {
-    
+  if(nums.length === 0) return 0;
+  if(nums.length === 1) return nums[0];
+
+  //Helper function for linear House Robber (House Robber 1)
+  const robLinear = (arr: number[]): number => {
+	let prevMax = 0;
+	let currMax = 0;
+
+	for(const nums of arr){
+		let temp = Math.max(currMax, prevMax + nums);
+		prevMax = currMax;
+		currMax = temp;
+	}
+
+	return currMax;
+  };
+
+  //Case 1: Exclude last house the last house (from index 0 to length - 2)
+  const case1 = robLinear(nums.slice(0, nums.length -1));
+  //Case 2: Exclude First House (from index 1 to length - 1)
+  const case2 = robLinear(nums.slice(1));
+
+  return Math.max(case1,case2);
 };
 
 console.log(rob([2,3,2]));
